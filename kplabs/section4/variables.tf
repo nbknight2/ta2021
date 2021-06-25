@@ -4,8 +4,10 @@ variable "vpn_ip" {
 }
 variable aws_access_key {}
 variable aws_secret_key {}
-variable "elb_name" {
-  type = string
+variable "elb_names" {
+  type = list
+  default = ["dev-loadbalancer", "stage-loadbalancer", "prod-loadbalancer"]
+
 }
 variable az {
   type = list(string)

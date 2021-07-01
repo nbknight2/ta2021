@@ -18,23 +18,13 @@ provider "aws" {
 # ///////////////////////
 # Resource
 # ///////////////////////
-resource "aws_instance" "instance-1" {
-  ami           = data.aws_ami.app_ami.id
+resource "aws_instance" "myec2" {
+  ami           = "ami-0aeeebd8d2ab47354"
   instance_type = "t2.micro"
 }
-
 # ///////////////////////
 # Data
 # ///////////////////////
-data "aws_ami" "app_ami" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm*"]
-  }
-}
 
 # ///////////////////////
 # Output
